@@ -3,12 +3,12 @@ import cv2
 import time
 
 cap1 = cv2.VideoCapture(0) #offset if there's a built in webcam
-cap2 = cv2.VideoCapture(1)
-cap1.set(4,1024) #or 1080
-cap1.set(3,1280) #or 1920
+cap2 = cv2.VideoCapture(0)
+cap1.set(4,1080) #or 1024 or 1080
+cap1.set(3,1920) #or 1280 or 1920
 
-cap2.set(4,1024) #or 1080
-cap2.set(3,1280) #or 1920
+cap2.set(4,1080) 
+cap2.set(3,1920) 
 
 x = 10 #position of text
 y = 20 #position of text
@@ -67,9 +67,12 @@ while(True):
     
     cv2.imshow('Camera on 0',gray1)
     cv2.imshow('Camera on 1',gray2)
-
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    key = cv2.waitKey(1)
+    if key & 0xFF == ord('p'):
+        cv2.imwrite('01.png',gray2)
+        cv2.imwrite('00.png',gray1)
+        break
+    if key & 0xFF == ord('q'):
         break
 
 # When everything done, release the capture
