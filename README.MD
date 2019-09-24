@@ -4,7 +4,9 @@
 
 This is an application written to read a pair of high definition, fixed focus webcams for the purposes of tracking crack growth in fatigue and fracture specimens.
 
-Running `WebCamXhairDual.py`, two windows showing grayscale output from the webcams will appear. Pressing `q` will exit and destroy both windows and stop all Python processes. Pressing `p` will save output of each webcam to the directory that the script is running from as 00.png for camera 1, and 01.png for camera 2.
+Running `WebCamXhairSingle.py` will read the first webcam available. Pressing `q` will exit and destroy both windows and stop all Python processes. Pressing `p` will save .png files when the key was pressed.
+
+Running `WebCamXhairDual.py`, two windows showing grayscale output from the webcams will appear, as in `WebCamXhairSingle.py`. Pressing `p` will save the output of each webcam to the directory that the script is running from as 00.png for camera 1, and 01.png for camera 2. *Note that two webcams connected to separate USB ports are required*.
 
 # Features
 
@@ -13,8 +15,8 @@ By default, the apparent framerate will appear in the top left of each window. T
 # Requirements
 
 1. Python 3.6.x (tested on 3.6.0)
-2. Numpy
-3. OpenCV for Python
+2. Numpy 1.16
+3. OpenCV for Python 4.1.1
 4. Generic webcams - Microsoft Lifecams and integrated laptop webcams were employed
 
 
